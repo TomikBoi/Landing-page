@@ -32,7 +32,7 @@ Breakpoint argument choices:
     transform: translateX(-1rem); }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
@@ -40,7 +40,7 @@ Breakpoint argument choices:
     transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translate(0); } }
 
 /* site-wide reset */
 *,
@@ -463,6 +463,9 @@ body {
   width: 90%;
   display: block;
   transition: all .3s; }
+  @media (max-width: 56.25em) {
+    .form-input {
+      width: 100%; } }
   .form-input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -488,6 +491,10 @@ body {
 .form-radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form-radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form-radio-input {
   display: none; }
@@ -535,7 +542,8 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
-  line-height: 1; }
+  line-height: 1;
+  backdrop-filter: blur(10px); }
   .popup-content {
     position: absolute;
     top: 50%;
@@ -743,12 +751,15 @@ body {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
